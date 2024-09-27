@@ -1,10 +1,11 @@
 import React from "react";
-import FinishedHeader from "./components/header/finishedheader";
+
+import Finished from "./components/finishpage";
 
 function App() {
   return (
     <div className="App">
-         <FinishedHeader/>
+         <Finished/>
     </div>
   );
 }

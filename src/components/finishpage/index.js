@@ -1,8 +1,10 @@
 import React from "react";
+import FinishedHeader from "../header/finishedheader";
 
 export default function Finished() {
   return (
     <section>
+        <FinishedHeader/>
       <div className="w-full h-screen flex justify-center items-center gap-8 flex-col md:flex-row">
       <div className=""><img className="w-32 h-32" src="/image/yes.png" alt=""></img></div>
       <div className=" flex flex-col gap-4 ">
