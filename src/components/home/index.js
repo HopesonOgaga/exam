@@ -1,8 +1,10 @@
 import React from "react";
 import TabSwitcing from "./pricing";
+import FinishedHeader from "../header/finishedheader";
 export default function Home() {
   return (
     <section className="">
+        <FinishedHeader/>
       <div className="w-screen h-full flex ">
         <div className="bg-green-500 w-[65vw] h-[60vh]">
           <p className=" font-bold text-8xl  flex justify-center items-center h-full w-full uppercase ">
