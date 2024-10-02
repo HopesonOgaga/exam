@@ -1,13 +1,11 @@
 import React from "react";
 
-import Finished from "./components/finishpage";
-import Home from "./components/home";
-import Footer from "./components/footer";
+import Registration from "./components/registration";
 
 function App() {
   return (
-    <div className="App">
-         <Footer/>
+    <div className="w-full h-full">
+         <Registration/>
     </div>
   );
 }
