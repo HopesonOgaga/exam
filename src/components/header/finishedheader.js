@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function FinishedHeader() {
   return (
@@ -14,9 +15,12 @@ export default function FinishedHeader() {
           src="/image/right-arrow.png"
           alt=""
         ></img>
-        <button className="hover:shadow-lg hover:border-gray-500 hover:scale-100  border-2 rounded-md shadow-sm border-black w-32 h-10 uppercase font-semibold text-lg">
-          home
-        </button>
+        <Link to={"/"}>
+          {" "}
+          <button className="hover:shadow-lg hover:border-gray-500 hover:scale-100  border-2 rounded-md shadow-sm border-black w-32 h-10 uppercase font-semibold text-lg">
+            home
+          </button>
+        </Link>
       </div>
     </section>
   );

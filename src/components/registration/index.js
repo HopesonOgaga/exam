@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import UserContext from "../../context/userContext";
+import FinishedHeader from "../header/finishedheader";
+
 export default function Registration() {
   const [firstName, setfirstName] = useState("");
   const [middleName, setmiddleName] = useState("");
@@ -11,6 +13,7 @@ export default function Registration() {
   const [venue, setVenue] = useState("");
   const [id, setid] = useState("");
   const { setData } = useContext(UserContext);
+
   function clear() {
     setfirstName("");
     setmiddleName("");
@@ -22,6 +25,7 @@ export default function Registration() {
     setVenue("");
     setid("");
   }
+
   function handleSubmit(e) {
     e.preventDefault();
     const data = {
@@ -36,171 +40,156 @@ export default function Registration() {
       id,
     };
 
-
-
     console.log(data);
     setData(data);
     clear();
   }
+
   return (
-    <div>
+    <div className="h-full w-full ">
+      <div className="mb-10">
+        <FinishedHeader />
+      </div>
       <section>
-        <div className="flex justify-center w-full">
-          <a
-            href="#"
-            class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-          >
-            <img
-              class="w-8 h-8 mr-2"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
-              alt="logo"
-            ></img>
-            Flowbite
-          </a>
-        </div>
-        <div className="flex justify-center w-full h-full ">
-          <form
-            class="space-y-4 md:space-y-6"
-            action="#"
-            onSubmit={handleSubmit}
-          >
-            <div className="flex justify-between gap-6  w-[60vw]">
+        <div className="flex justify-center w-full h-full">
+          <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+            <div className="flex justify-between gap-6 w-full md:w-[60vw] md:flex-row flex-col">
               <div>
                 <label
-                  for="firstName"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="firstname"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  firstname
+                  First Name
                 </label>
                 <input
                   type="text"
                   name="firstname"
                   id="firstname"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder=""
                   required
                   value={firstName}
                   onChange={(e) => setfirstName(e.target.value)}
-                ></input>
+                />
               </div>
               <div>
                 <label
-                  for="middleName"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="middlename"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  middlename
+                  Middle Name
                 </label>
                 <input
                   type="text"
                   name="middlename"
                   id="middlename"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={middleName}
                   onChange={(e) => setmiddleName(e.target.value)}
-                ></input>
+                />
               </div>
               <div>
                 <label
-                  for="lastNmae"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="lastname"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  lastname
+                  Last Name
                 </label>
                 <input
                   type="text"
                   name="lastName"
-                  id="lastName"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  id="lastname"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={lastName}
                   onChange={(e) => setlastName(e.target.value)}
-                ></input>
+                />
               </div>
             </div>
-            <div className="w-full flex gap-10 justify-around  ">
+            <div className="w-full flex md:flex-row flex-col gap-10 justify-around">
               <div>
                 <label
-                  for="studentNumber"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="studentNumber"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  Matnumber
+                  Mat Number
                 </label>
                 <input
                   type="text"
                   name="studentNumber"
                   id="studentNumber"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={Matnumber}
                   onChange={(e) => setmatNumber(e.target.value)}
-                ></input>
+                />
               </div>
               <div>
                 <label
-                  for="studentYear"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="studentYear"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  studentyear
+                  Student Year
                 </label>
                 <input
                   type="text"
                   name="studentYear"
                   id="studentYear"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={studentYear}
                   onChange={(e) => setStudentYear(e.target.value)}
-                ></input>
+                />
               </div>
             </div>
-            <div className="w-full flex gap-10 justify-around  ">
+            <div className="w-full flex md:flex-row flex-col gap-10 justify-around">
               <div>
                 <label
-                  for="studentDegre"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="studentDegree"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  studentdegree
+                  Student Degree
                 </label>
                 <input
                   type="text"
                   name="studentDegre"
                   id="studentDegree"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={studentDegre}
                   onChange={(e) => setStudentDgre(e.target.value)}
-                ></input>
+                />
               </div>
               <div>
                 <label
-                  for="email"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  email
+                  Email
                 </label>
                 <input
                   type="email"
                   name="email"
                   id="email"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                ></input>
+                />
               </div>
             </div>
-            <div className="w-full flex gap-10 justify-around  ">
+            <div className="w-full flex gap-10 justify-around">
               <div>
                 <label
-                  for="venue"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="venue"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
                   Venue
                 </label>
@@ -208,50 +197,50 @@ export default function Registration() {
                   type="text"
                   name="venue"
                   id="venue"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={venue}
                   onChange={(e) => setVenue(e.target.value)}
-                ></input>
+                />
               </div>
               <div>
                 <label
-                  for="id"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="id"
+                  className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
                 >
-                  id
+                  ID
                 </label>
                 <input
                   type="text"
                   name="id"
                   id="id"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="name@company.com"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full md:w-[20vw] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder=""
                   required
                   value={id}
                   onChange={(e) => setid(e.target.value)}
-                ></input>
+                />
               </div>
             </div>
             <div className="flex justify-center w-full">
               <label
-                for="image"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                htmlFor="image"
+                className="block mb-2 text-sm font-semibold text-gray-900 dark:text-white capitalize"
               >
-                image
+                Image
               </label>
               <input
-                type="image"
+                type="file"
                 name="image"
-                src=""
-                alt="input images"
-              ></input>
+                id="image"
+                className="block w-full md:w-[20vw] text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              />
             </div>
-            <div>
+            <div className="flex justify-center w-full h-full">
               <button
                 type="submit"
-                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className="w-1/2 h-14 capitalize text-white bg-green-500 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-semibold rounded-lg text-sm px-5 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Create an account
               </button>
