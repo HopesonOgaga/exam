@@ -36,6 +36,8 @@ export default function Registration() {
       id,
     };
 
+
+
     console.log(data);
     setData(data);
     clear();

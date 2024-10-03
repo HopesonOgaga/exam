@@ -1,10 +1,11 @@
 import React from "react";
 import TabSwitcing from "./pricing";
 import FinishedHeader from "../header/finishedheader";
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <section className="">
-        <FinishedHeader/>
+      <FinishedHeader />
       <div className="w-screen h-full flex ">
         <div className="bg-green-500 w-[65vw] h-[60vh]">
           <p className=" font-bold text-8xl  flex justify-center items-center h-full w-full uppercase ">
@@ -22,9 +23,12 @@ export default function Home() {
         <p className=" text-gray-400 uppercase text-xl ">
           examine your candidate online with 100% behaviour and no mal-practice{" "}
         </p>
-        <button className="rounded-lg bg-black text-white font-semibold hover:scale-100 hover:text-gray-400 capitalize w-32 h-12">
-          sign up
-        </button>
+        <Link to={"Registration"}>
+          {" "}
+          <button className="rounded-lg bg-black text-white font-semibold hover:scale-100 hover:text-gray-400 capitalize w-32 h-12">
+            sign up
+          </button>
+        </Link>
       </div>
       {/* card */}
       <div className="flex justify-center w-full h-full mt-6">
