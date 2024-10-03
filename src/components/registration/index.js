@@ -12,6 +12,7 @@ export default function Registration() {
   const [email, setEmail] = useState("");
   const [venue, setVenue] = useState("");
   const [id, setid] = useState("");
+  const [image, setImage] = useState("");
   const { setData } = useContext(UserContext);
 
   function clear() {
@@ -24,6 +25,7 @@ export default function Registration() {
     setEmail("");
     setVenue("");
     setid("");
+    setImage("");
   }
 
   function handleSubmit(e) {
@@ -38,6 +40,7 @@ export default function Registration() {
       email,
       venue,
       id,
+      image,
     };
 
     console.log(data);
@@ -234,6 +237,8 @@ export default function Registration() {
                 type="file"
                 name="image"
                 id="image"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
                 className="block w-full md:w-[20vw] text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
               />
             </div>
